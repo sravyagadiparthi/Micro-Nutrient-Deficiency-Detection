@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result:</h2>
+        <p><strong>{{ prediction }}</strong></p>
+        <img src="{{ image_path }}" alt="Leaf Image" width="300">
+        <br><br>
+        <a href="/">Try Another Image</a>
+    </div>
+    <div class="recommendation-section">
+  <h2>Fertilizer Recommendation</h2>
+  <ul>
+    <li><strong>Fertilizer:</strong> {{ recommendation.fertilizer }}</li>
+    <li><strong>Dosage:</strong> {{ recommendation.dosage }}</li>
+    <li><strong>Application Method:</strong> {{ recommendation.method }}</li>
+    <li><strong>Note:</strong> {{ recommendation.note }}</li>
+  </ul>
+</div>
+<div class="feedback-section">
+  <h3>We’d love to hear from you!</h3>
+  <p>Was this fertilizer recommendation helpful?</p>
+  <button onclick="window.location.href='{{ url_for('feedback') }}'" class="feedback-btn">
+  Give Feedback
+</button>
+
+</div>
+<br><br>
+<div class="image-gallery">
+  <img src="https://www.gettyimages.com/photos/happy-indian-farmer" alt="Happy Indian Farmer" class="gallery-img">
+  <img src="https://stock.adobe.com/search?k=indian+farmer+smiling" alt="Smiling Farmer in Field" class="gallery-img">
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

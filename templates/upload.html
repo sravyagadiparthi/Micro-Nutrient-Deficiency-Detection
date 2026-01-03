@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <title>Upload Banana Leaf Image</title>
+</head>
+<body>
+    <h2>Upload Image</h2>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="leaf_image" accept="image/*" required>
+        <br><br>
+        <button type="submit">Detect Deficiency</button>
+    </form>
+</body>
+</html>

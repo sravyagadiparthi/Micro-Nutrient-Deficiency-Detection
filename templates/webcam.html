@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <title>Capture via Webcam</title>
+</head>
+<body>
+    <h2>Capture Image from Webcam</h2>
+    <video id="video" width="300" autoplay></video>
+    <br>
+    <button id="capture">Capture Image</button>
+    <canvas id="canvas" width="224" height="224" style="display:none;"></canvas>
+    <form id="uploadForm" action="/predict_webcam" method="post">
+        <input type="hidden" name="image_data" id="imageData">
+        <br>
+        <button type="submit">Detect Deficiency</button>
+    </form>
+
+    <script>
+        window.onload = function() {
+            const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const imageDataInput = document.getElementById('imageData');
+
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => video.srcObject = stream)
+                .catch(err => console.error("Webcam access error:", err));
+
+            document.getElementById('capture').onclick = () => {
+                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                const dataURL = canvas.toDataURL('image/png');
+                imageDataInput.value = dataURL;
+                canvas.style.display = 'block';
+            };
+
+            document.getElementById('uploadForm').onsubmit = function(e) {
+                if (!imageDataInput.value) {
+                    alert("Please capture an image before submitting.");
+                    e.preventDefault();
+                }
+            };
+        };
+    </script>
+</body>
+</html>

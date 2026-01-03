@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Farmer Feedback</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Farmer Feedback</h2>
+    <form action="{{ url_for('submit_feedback') }}" method="POST">
+      <label for="feedback">Please share your thoughts:</label><br>
+      <textarea id="feedback" name="feedback" rows="5" cols="50" required></textarea><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <br><br>
+  <div class="quote-box">
+  <blockquote>
+    “Farming is a profession of hope.” – Brett Brian
+  </blockquote>
+ 
+</div>
+
+</body>
+</html>
+

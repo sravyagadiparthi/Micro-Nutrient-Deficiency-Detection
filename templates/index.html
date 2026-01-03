@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <title>Banana Deficiency Detection</title>
+</head>
+<body>
+    <h1>Welcome to Banana Deficiency Detection</h1>
+    <p>Select how you'd like to provide the leaf image:</p>
+    <button onclick="location.href='/upload'">Upload Image</button>
+    <button onclick="location.href='/webcam'">Capture via Webcam</button>
+    <br><br>
+    <div class="image-gallery">
+  <img src="https://www.shutterstock.com/image-photo/organic-banana-field-fresh-bananas-fields-1614877438" alt="Banana Field" class="gallery-img">
+  <img src="https://www.istockphoto.com/photos/banana-field" alt="Banana Plantation" class="gallery-img">
+</div>
+
+</body>
+
+</html>
