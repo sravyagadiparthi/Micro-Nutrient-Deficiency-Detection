@@ -1,4 +1,4 @@
-# Micro Nutrient Deficiency Detection 🍌🌱
+# Micro Nutrient Deficiency Detection
 
 This project detects micronutrient deficiencies in banana plants using image processing and machine learning.
 
